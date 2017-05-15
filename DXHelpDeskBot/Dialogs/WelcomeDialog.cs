@@ -14,7 +14,7 @@ namespace DXHelpDeskBot.Dialogs
         public async Task StartAsync(IDialogContext context)
         {
 
-            await context.PostAsync("Welcome to the DX heldesk bot");
+            await context.PostAsync("Welcome to the DX helpdesk bot");
             
             await Respond(context);
 
