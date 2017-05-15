@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
+using DXHelpDeskBot.Models;
+using DXHelpDeskBot.Dialogs;
 
 namespace DXHelpDeskBot
 {
@@ -18,7 +20,8 @@ namespace DXHelpDeskBot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
+                //await Conversation.SendAsync(activity, () => new RootLUISDialog());
+                await Conversation.SendAsync(activity, MakeRootLuisDialog);
             }
             else
             {
@@ -26,6 +29,12 @@ namespace DXHelpDeskBot
             }
             var response = Request.CreateResponse(HttpStatusCode.OK);
             return response;
+        }
+
+        private IDialog<HelpDeskMainModel> MakeRootLuisDialog()
+        {
+            //Start the Chain of dialogs with the RootLUISDialog, which is the main (LUIS) dialog.
+            return Chain.From(() => new RootLUISDialog());
         }
 
         private Activity HandleSystemMessage(Activity message)
