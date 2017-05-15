@@ -15,6 +15,7 @@ namespace DXHelpDeskBot.Dialogs
         {
 
             await context.PostAsync("Welcome to the DX heldesk bot");
+            
             await Respond(context);
 
             context.Wait(MessageReceivedAsync);

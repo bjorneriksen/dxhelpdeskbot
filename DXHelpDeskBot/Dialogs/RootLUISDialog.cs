@@ -25,14 +25,16 @@ namespace DXHelpDeskBot.Dialogs
         {
 
             context.Call(new WelcomeDialog(), Callback);
-        }
-
-        [LuisIntent("IntentToBeDefinedWithinLUIS")]
-        public async Task StartHelpDeskMainDialog(IDialogContext context, LuisResult result)
-        {
             var enrollmentForm = new FormDialog<HelpDeskMainModel>(new Models.HelpDeskMainModel(), HelpDeskMainModel.BuildForm, FormOptions.PromptInStart);
             context.Call<HelpDeskMainModel>(enrollmentForm, Callback);
         }
+
+        //[LuisIntent("IntentToBeDefinedWithinLUIS")]
+        //public async Task StartHelpDeskMainDialog(IDialogContext context, LuisResult result)
+        //{
+        //    var enrollmentForm = new FormDialog<HelpDeskMainModel>(new Models.HelpDeskMainModel(), HelpDeskMainModel.BuildForm, FormOptions.PromptInStart);
+        //    context.Call<HelpDeskMainModel>(enrollmentForm, Callback);
+        //}
 
         private async Task Callback(IDialogContext context, IAwaitable<object> result)
         {
