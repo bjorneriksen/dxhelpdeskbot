@@ -18,7 +18,16 @@ namespace DXHelpDeskBot.Dialogs
             
             await Respond(context);
 
-            context.Wait(MessageReceivedAsync);
+            var userName = String.Empty;
+            context.UserData.TryGetValue<string>("Name", out userName);
+            if (string.IsNullOrEmpty(userName))
+            {
+                context.Wait(MessageReceivedAsync);
+            }
+            else
+            {
+                context.Done(context.Activity);
+            }
         }
        
         /// <summary>
@@ -34,10 +43,11 @@ namespace DXHelpDeskBot.Dialogs
             {
                 await context.PostAsync("What is your name?");
                 context.UserData.SetValue<bool>("GetName", true);
+                
             }
             else
             {
-                await context.PostAsync($"Hi {userName}, how can I help you today?");
+              await context.PostAsync($"Hi {userName}, how can I help you today?");
             }
         }
 
@@ -57,6 +67,7 @@ namespace DXHelpDeskBot.Dialogs
             }
 
             await Respond(context);
+            
             context.Done(message); //completes the current dialog and return a result to the parent dialog  (back to the chain)
         }
     }
