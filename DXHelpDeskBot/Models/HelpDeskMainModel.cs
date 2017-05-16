@@ -20,7 +20,7 @@ namespace DXHelpDeskBot.Models
         PaaS,
         O365,
         AzureMarketplace
-    }*/
+    }
     public enum HSDTopics
     {
         BigData,
@@ -43,7 +43,7 @@ namespace DXHelpDeskBot.Models
         CognitiveServices,
         DeepLearning
     }
-/*
+
     [Serializable]
     public class MainTopicModel
     {

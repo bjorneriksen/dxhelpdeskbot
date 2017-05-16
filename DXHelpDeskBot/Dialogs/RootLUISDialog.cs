@@ -48,7 +48,21 @@ namespace DXHelpDeskBot.Dialogs
             if (message.Equals(Resources.MainCloud))
             {
                 PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
-
+            }
+            else if (message.Equals(Resources.MainClient))
+            {
+                //TBD
+                //PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
+            }
+            if (message.Equals(Resources.MainHSD))
+            {
+                //TBD
+                //PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
+            }
+            if (message.Equals(Resources.MainAI))
+            {
+                //TBD
+                //PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
             }
 
             //context.Wait(MessageReceived); //It will start the chain over again
@@ -56,8 +70,33 @@ namespace DXHelpDeskBot.Dialogs
 
         private async Task CallbackCloud(IDialogContext context, IAwaitable<object> result)
         {
-           
-         
+            var message = await result as string;
+
+            if (message.Equals(Resources.CloudAccount))
+            {
+                PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
+            }
+            else if (message.Equals(Resources.CloudIaaS))
+            {
+                //TBD
+                //PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
+            }
+            if (message.Equals(Resources.CloudPaaS))
+            {
+                //TBD
+                //PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
+            }
+            if (message.Equals(Resources.CloudMarket))
+            {
+                //TBD
+                //PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
+            }
+            if (message.Equals(Resources.CloudO365))
+            {
+                //TBD
+                //PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
+            }
+
             context.Wait(MessageReceived); //It will start the chain over again
         }
     }

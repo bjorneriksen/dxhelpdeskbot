@@ -61,6 +61,69 @@ namespace DXHelpDeskBot {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cognitive Services.
+        /// </summary>
+        internal static string AICognitiveServices {
+            get {
+                return ResourceManager.GetString("AICognitiveServices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deep Learning.
+        /// </summary>
+        internal static string AIDeepLearning {
+            get {
+                return ResourceManager.GetString("AIDeepLearning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Machine Learning.
+        /// </summary>
+        internal static string AIMachineLearning {
+            get {
+                return ResourceManager.GetString("AIMachineLearning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cross-Platform Development.
+        /// </summary>
+        internal static string ClientCross {
+            get {
+                return ResourceManager.GetString("ClientCross", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Game Development.
+        /// </summary>
+        internal static string ClientGame {
+            get {
+                return ResourceManager.GetString("ClientGame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Web Development.
+        /// </summary>
+        internal static string ClientWeb {
+            get {
+                return ResourceManager.GetString("ClientWeb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows Development.
+        /// </summary>
+        internal static string ClientWindows {
+            get {
+                return ResourceManager.GetString("ClientWindows", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Account.
         /// </summary>
         internal static string CloudAccount {
@@ -102,6 +165,51 @@ namespace DXHelpDeskBot {
         internal static string CloudPaaS {
             get {
                 return ResourceManager.GetString("CloudPaaS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Analytics.
+        /// </summary>
+        internal static string HSDAnalytics {
+            get {
+                return ResourceManager.GetString("HSDAnalytics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Big Data.
+        /// </summary>
+        internal static string HSDBigData {
+            get {
+                return ResourceManager.GetString("HSDBigData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NoSQL.
+        /// </summary>
+        internal static string HSDNoSQL {
+            get {
+                return ResourceManager.GetString("HSDNoSQL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SQL.
+        /// </summary>
+        internal static string HSDSQL {
+            get {
+                return ResourceManager.GetString("HSDSQL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Visualize Data.
+        /// </summary>
+        internal static string HSDVisualizeData {
+            get {
+                return ResourceManager.GetString("HSDVisualizeData", resourceCulture);
             }
         }
         

@@ -117,6 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AICognitiveServices" xml:space="preserve">
+    <value>Cognitive Services</value>
+  </data>
+  <data name="AIDeepLearning" xml:space="preserve">
+    <value>Deep Learning</value>
+  </data>
+  <data name="AIMachineLearning" xml:space="preserve">
+    <value>Machine Learning</value>
+  </data>
+  <data name="ClientCross" xml:space="preserve">
+    <value>Cross-Platform Development</value>
+  </data>
+  <data name="ClientGame" xml:space="preserve">
+    <value>Game Development</value>
+  </data>
+  <data name="ClientWeb" xml:space="preserve">
+    <value>Web Development</value>
+  </data>
+  <data name="ClientWindows" xml:space="preserve">
+    <value>Windows Development</value>
+  </data>
   <data name="CloudAccount" xml:space="preserve">
     <value>Account</value>
   </data>
@@ -131,6 +152,21 @@
   </data>
   <data name="CloudPaaS" xml:space="preserve">
     <value>PaaS</value>
+  </data>
+  <data name="HSDAnalytics" xml:space="preserve">
+    <value>Analytics</value>
+  </data>
+  <data name="HSDBigData" xml:space="preserve">
+    <value>Big Data</value>
+  </data>
+  <data name="HSDNoSQL" xml:space="preserve">
+    <value>NoSQL</value>
+  </data>
+  <data name="HSDSQL" xml:space="preserve">
+    <value>SQL</value>
+  </data>
+  <data name="HSDVisualizeData" xml:space="preserve">
+    <value>Visualize Data</value>
   </data>
   <data name="MainAI" xml:space="preserve">
     <value>AI</value>
