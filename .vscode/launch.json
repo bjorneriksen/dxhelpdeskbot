@@ -5,7 +5,7 @@
             "name": "Launch",
             "type": "mono",
             "request": "launch",
-            "program": "xsp4",
+            "program": "/Library/Frameworks/Mono.framework/Versions/5.0.0/lib/mono/4.5/xsp4.exe",
             "args": ["--nonstop"],
             "cwd": "${workspaceRoot}/DXHelpDeskBot",
             "preLaunchTask": "",
