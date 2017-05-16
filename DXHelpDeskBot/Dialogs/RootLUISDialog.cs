@@ -24,17 +24,22 @@ namespace DXHelpDeskBot.Dialogs
         public async Task Greeting(IDialogContext context, LuisResult result)
         {
 
-            context.Call(new WelcomeDialog(), Callback);
-        }
+            context.Call(new WelcomeDialog(), StartHelpDeskMainDialog);
 
-        [LuisIntent("IntentToBeDefinedWithinLUIS")]
-        public async Task StartHelpDeskMainDialog(IDialogContext context, LuisResult result)
+        }
+        private async Task StartHelpDeskMainDialog(IDialogContext context, IAwaitable<object> result)
         {
             var enrollmentForm = new FormDialog<HelpDeskMainModel>(new Models.HelpDeskMainModel(), HelpDeskMainModel.BuildForm, FormOptions.PromptInStart);
             context.Call<HelpDeskMainModel>(enrollmentForm, Callback);
         }
+            //[LuisIntent("IntentToBeDefinedWithinLUIS")]
+            //public async Task StartHelpDeskMainDialog(IDialogContext context, LuisResult result)
+            //{
+            //    var enrollmentForm = new FormDialog<HelpDeskMainModel>(new Models.HelpDeskMainModel(), HelpDeskMainModel.BuildForm, FormOptions.PromptInStart);
+            //    context.Call<HelpDeskMainModel>(enrollmentForm, Callback);
+            //}
 
-        private async Task Callback(IDialogContext context, IAwaitable<object> result)
+            private async Task Callback(IDialogContext context, IAwaitable<object> result)
         {
             context.Wait(MessageReceived); //It will start the chain over again
         }
