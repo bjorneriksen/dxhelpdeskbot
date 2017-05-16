@@ -16,8 +16,15 @@ namespace DXHelpDeskBot.Dialogs
         [LuisIntent("")]
         public async Task None(IDialogContext context, LuisResult result)
         {
-            await context.PostAsync("I'm sorry, I don't know what you mean.");
+            await context.PostAsync("I'm sorry, I don't know what you mean in Account context.");
             context.Wait(MessageReceived);
+        }
+
+        [LuisIntent("CloudSetup")]
+        public async Task CloudSetup(IDialogContext context, LuisResult result)
+        {
+            await context.PostAsync("Creating a new Azure account is easy.");
+            //context.Call(new WelcomeDialog(), StartHelpDeskMainDialog);
         }
     }
 }

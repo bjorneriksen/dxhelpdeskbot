@@ -7,6 +7,7 @@ using Microsoft.Bot.Builder.FormFlow;
 using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace DXHelpDeskBot.Dialogs
 {
@@ -41,6 +42,10 @@ namespace DXHelpDeskBot.Dialogs
         //    context.Call<HelpDeskMainModel>(enrollmentForm, Callback);
         //}
 
+        private async Task Callback(IDialogContext context, IAwaitable<object> result)
+        {
+            context.Wait(MessageReceived);
+        }
         private async Task CallbackTopics(IDialogContext context, IAwaitable<object> result)
         {
             var message = await result as string;
@@ -68,10 +73,11 @@ namespace DXHelpDeskBot.Dialogs
         private async Task CallbackCloud(IDialogContext context, IAwaitable<object> result)
         {
             var message = await result as string;
+            var msg = await result as IMessageActivity;
 
             if (message.Equals(Resources.CloudAccount))
             {
-                //TBD
+                context.Call<CloudLUISDialog>(new CloudLUISDialog(), Callback);
             }
             else if (message.Equals(Resources.CloudIaaS))
             {
@@ -90,7 +96,7 @@ namespace DXHelpDeskBot.Dialogs
                 //TBD
             }
 
-            context.Wait(MessageReceived); //It will start the chain over again
+           // context.Wait(MessageReceived); //It will start the chain over again
         }
 
         private async Task CallbackClient(IDialogContext context, IAwaitable<object> result)
