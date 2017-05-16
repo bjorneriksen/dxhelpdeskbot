@@ -28,18 +28,18 @@ namespace DXHelpDeskBot.Dialogs
         }
         private async Task StartHelpDeskMainDialog(IDialogContext context, IAwaitable<object> result)
         {
-            PromptDialog.Choice(context, CallbackTopics,new List<string>() { Resources.MainCloud, Resources.MainHSD, Resources.MainClient, Resources.MainAI}, "What topic you would like to know more about?");
+            PromptDialog.Choice(context, CallbackTopics, new List<string>() { Resources.MainCloud, Resources.MainHSD, Resources.MainClient, Resources.MainAI }, "What topic you would like to know more about?");
         }
 
         //var enrollmentForm = new FormDialog<MainTopicModel>(new Models.MainTopicModel(), MainTopicModel.BuildForm, FormOptions.PromptInStart);
         //context.Call<MainTopicModel>(enrollmentForm, CallbackTopics);
-    
-    //[LuisIntent("IntentToBeDefinedWithinLUIS")]
-    //public async Task StartHelpDeskMainDialog(IDialogContext context, LuisResult result)
-    //{
-    //    var enrollmentForm = new FormDialog<HelpDeskMainModel>(new Models.HelpDeskMainModel(), HelpDeskMainModel.BuildForm, FormOptions.PromptInStart);
-    //    context.Call<HelpDeskMainModel>(enrollmentForm, Callback);
-    //}
+
+        //[LuisIntent("IntentToBeDefinedWithinLUIS")]
+        //public async Task StartHelpDeskMainDialog(IDialogContext context, LuisResult result)
+        //{
+        //    var enrollmentForm = new FormDialog<HelpDeskMainModel>(new Models.HelpDeskMainModel(), HelpDeskMainModel.BuildForm, FormOptions.PromptInStart);
+        //    context.Call<HelpDeskMainModel>(enrollmentForm, Callback);
+        //}
 
         private async Task CallbackTopics(IDialogContext context, IAwaitable<object> result)
         {
@@ -74,27 +74,92 @@ namespace DXHelpDeskBot.Dialogs
 
             if (message.Equals(Resources.CloudAccount))
             {
-                PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
+                //TBD
             }
             else if (message.Equals(Resources.CloudIaaS))
             {
                 //TBD
-                //PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
             }
             if (message.Equals(Resources.CloudPaaS))
             {
                 //TBD
-                //PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
             }
             if (message.Equals(Resources.CloudMarket))
             {
                 //TBD
-                //PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
             }
             if (message.Equals(Resources.CloudO365))
             {
                 //TBD
-                //PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
+            }
+
+            context.Wait(MessageReceived); //It will start the chain over again
+        }
+
+        private async Task CallbackClient(IDialogContext context, IAwaitable<object> result)
+        {
+            var message = await result as string;
+
+            if (message.Equals(Resources.ClientCross))
+            {
+                //TBD
+            }
+            else if (message.Equals(Resources.ClientGame))
+            {
+                //TBD
+            }
+            if (message.Equals(Resources.ClientWeb))
+            {
+                //TBD
+            }
+            if (message.Equals(Resources.ClientWindows))
+            {
+                //TBD
+            }
+            context.Wait(MessageReceived); //It will start the chain over again
+        }
+
+        private async Task CallbackHSD(IDialogContext context, IAwaitable<object> result)
+        {
+            var message = await result as string;
+
+            if (message.Equals(Resources.HSDAnalytics))
+            {
+                //TBD
+            }
+            else if (message.Equals(Resources.HSDBigData))
+            {
+                //TBD
+            }
+            if (message.Equals(Resources.HSDNoSQL))
+            {
+                //TBD
+            }
+            if (message.Equals(Resources.HSDSQL))
+            {
+                //TBD
+            }
+            if (message.Equals(Resources.HSDVisualizeData))
+            {
+                //TBD
+            }
+            context.Wait(MessageReceived); //It will start the chain over again
+        }
+        private async Task CallbackAI(IDialogContext context, IAwaitable<object> result)
+        {
+            var message = await result as string;
+
+            if (message.Equals(Resources.AICognitiveServices))
+            {
+                //TBD
+            }
+            else if (message.Equals(Resources.AIDeepLearning))
+            {
+                //TBD
+            }
+            if (message.Equals(Resources.AIMachineLearning))
+            {
+                //TBD
             }
 
             context.Wait(MessageReceived); //It will start the chain over again
