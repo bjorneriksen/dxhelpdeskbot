@@ -110,6 +110,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RESTOperations.cs" />
+    <Compile Include="TextAnalytics\Sentiment.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Dialogs\RootLUISDialog.cs" />

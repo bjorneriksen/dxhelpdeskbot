@@ -65,5 +65,13 @@ namespace DXHelpDeskBot
 
             return null;
         }
+
+        public async Task<HttpResponseMessage> Get()
+        {
+            var score = await TextAnalytics.Sentiment.Perform("This is awesome");
+            var result = Request.CreateResponse(HttpStatusCode.OK);
+            return result;
+        }
+        
     }
 }
