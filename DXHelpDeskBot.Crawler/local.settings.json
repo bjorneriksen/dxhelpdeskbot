@@ -3,7 +3,7 @@
   "Values": {
     "AzureWebJobsStorage": "",
     "AzureWebJobsDashboard": "",
-    "CrawlSiteBase": "",
+    "CrawlSiteBase": "https://docs.microsoft.com/en-us/azure",
     "DxHelpDeskBotCrawlerData": ""
   }
 }

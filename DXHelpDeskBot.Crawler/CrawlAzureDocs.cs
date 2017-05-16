@@ -78,38 +78,9 @@ namespace DXHelpDeskBot.Crawler
             if (string.IsNullOrEmpty(crawledPage.Content.Text))
                 _log.Info($"Page had no content {crawledPage.Uri.AbsoluteUri}");
 
-            var htmlAgilityPackDocument = crawledPage.HtmlDocument; //Html Agility Pack parser
-            var angleSharpHtmlDocument = crawledPage.AngleSharpHtmlDocument; //AngleSharp parser
-
-            var description = String.Empty;
-            var descriptionElement = angleSharpHtmlDocument.QuerySelectorAll("meta[name=\"description\"]")
-                        .FirstOrDefault();
-            if (descriptionElement != null)
-                description = descriptionElement.GetAttribute("content");
-
-            var service = String.Empty;
-            var serviceElement = angleSharpHtmlDocument.QuerySelectorAll("meta[name=\"ms.service\"]")
-                        .FirstOrDefault();
-            if (serviceElement != null)
-                service = serviceElement.GetAttribute("content");
-
-            var documentId = String.Empty;
-            var documentIdElement = angleSharpHtmlDocument.QuerySelectorAll("meta[name=\"document_id\"]")
-                        .FirstOrDefault();
-            if (documentIdElement != null)
-                documentId = documentIdElement.GetAttribute("content");
-
-            _outDocument.AddAsync(
-                new CrawlerEntry()
-                {
-                    id = documentId,
-                    URL = crawledPage.Uri.ToString(),
-                    Title = angleSharpHtmlDocument.Title,
-                    Description = description,
-                    Content = angleSharpHtmlDocument.Body.TextContent,
-                    Service = service,
-                    LastUpdated = DateTime.Now
-                });
+            //TODO: Check for null result from ToCrawlerEntry
+            _outDocument.AddAsync(crawledPage.ToCrawlerEntry());
+            
         }
 
         static void Crawler_PageLinksCrawlDisallowed(object sender, PageLinksCrawlDisallowedArgs e)

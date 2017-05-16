@@ -17,5 +17,5 @@ namespace DXHelpDeskBot.Crawler
         public string Content { get; set; }
         public string Service { get; set; }
         public DateTime LastUpdated  { get; set; }
-}
+    }
 }
