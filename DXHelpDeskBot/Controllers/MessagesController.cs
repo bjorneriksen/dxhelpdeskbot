@@ -20,7 +20,6 @@ namespace DXHelpDeskBot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                //await Conversation.SendAsync(activity, () => new RootLUISDialog());
                 await Conversation.SendAsync(activity, MakeRootLuisDialog);
             }
             else
@@ -31,7 +30,7 @@ namespace DXHelpDeskBot
             return response;
         }
 
-        private IDialog<HelpDeskMainModel> MakeRootLuisDialog()
+        private IDialog<RootLUISDialog> MakeRootLuisDialog()
         {
             //Start the Chain of dialogs with the RootLUISDialog, which is the main (LUIS) dialog.
             return Chain.From(() => new RootLUISDialog());
