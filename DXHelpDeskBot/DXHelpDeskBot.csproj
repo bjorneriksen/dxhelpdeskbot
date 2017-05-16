@@ -112,6 +112,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Dialogs\CloudLUISDialog.cs" />
     <Compile Include="Dialogs\RootLUISDialog.cs" />
     <Compile Include="Dialogs\WelcomeDialog.cs" />
     <Compile Include="Global.asax.cs">
@@ -150,7 +151,6 @@
     <EnableMSDeployAppOffline>true</EnableMSDeployAppOffline>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-	
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != '' AND '$(OS)' != 'Unix' " />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>

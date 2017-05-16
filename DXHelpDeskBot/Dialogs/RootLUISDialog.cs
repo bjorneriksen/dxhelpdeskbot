@@ -51,18 +51,15 @@ namespace DXHelpDeskBot.Dialogs
             }
             else if (message.Equals(Resources.MainClient))
             {
-                //TBD
-                //PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
+                PromptDialog.Choice(context, CallbackClient, new List<string>() { Resources.ClientWindows, Resources.ClientCross, Resources.ClientWeb, Resources.ClientGame}, "What client topic you would like to know more about?");
             }
             if (message.Equals(Resources.MainHSD))
             {
-                //TBD
-                //PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
+                PromptDialog.Choice(context, CallbackHSD, new List<string>() { Resources.HSDBigData, Resources.HSDAnalytics, Resources.HSDNoSQL, Resources.HSDSQL, Resources.HSDVisualizeData }, "What high scale data topic you would like to know more about?");
             }
             if (message.Equals(Resources.MainAI))
             {
-                //TBD
-                //PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
+                PromptDialog.Choice(context, CallbackAI, new List<string>() { Resources.AIMachineLearning, Resources.AICognitiveServices, Resources.AIDeepLearning}, "What AI topic you would like to know more about?");
             }
 
             //context.Wait(MessageReceived); //It will start the chain over again
@@ -145,6 +142,7 @@ namespace DXHelpDeskBot.Dialogs
             }
             context.Wait(MessageReceived); //It will start the chain over again
         }
+
         private async Task CallbackAI(IDialogContext context, IAwaitable<object> result)
         {
             var message = await result as string;
