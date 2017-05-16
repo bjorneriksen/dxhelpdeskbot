@@ -59,5 +59,86 @@ namespace DXHelpDeskBot {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account.
+        /// </summary>
+        internal static string CloudAccount {
+            get {
+                return ResourceManager.GetString("CloudAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IaaS.
+        /// </summary>
+        internal static string CloudIaaS {
+            get {
+                return ResourceManager.GetString("CloudIaaS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Azure Marketplace.
+        /// </summary>
+        internal static string CloudMarket {
+            get {
+                return ResourceManager.GetString("CloudMarket", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Office 365.
+        /// </summary>
+        internal static string CloudO365 {
+            get {
+                return ResourceManager.GetString("CloudO365", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PaaS.
+        /// </summary>
+        internal static string CloudPaaS {
+            get {
+                return ResourceManager.GetString("CloudPaaS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AI.
+        /// </summary>
+        internal static string MainAI {
+            get {
+                return ResourceManager.GetString("MainAI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client Development.
+        /// </summary>
+        internal static string MainClient {
+            get {
+                return ResourceManager.GetString("MainClient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cloud.
+        /// </summary>
+        internal static string MainCloud {
+            get {
+                return ResourceManager.GetString("MainCloud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to High Scale Data.
+        /// </summary>
+        internal static string MainHSD {
+            get {
+                return ResourceManager.GetString("MainHSD", resourceCulture);
+            }
+        }
     }
 }
