@@ -20,7 +20,6 @@ namespace DXHelpDeskBot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                //await Conversation.SendAsync(activity, () => new RootLUISDialog());
                 await Conversation.SendAsync(activity, MakeRootLuisDialog);
             }
             else
@@ -31,7 +30,7 @@ namespace DXHelpDeskBot
             return response;
         }
 
-        private IDialog<HelpDeskMainModel> MakeRootLuisDialog()
+        private IDialog<RootLUISDialog> MakeRootLuisDialog()
         {
             //Start the Chain of dialogs with the RootLUISDialog, which is the main (LUIS) dialog.
             return Chain.From(() => new RootLUISDialog());
@@ -65,5 +64,13 @@ namespace DXHelpDeskBot
 
             return null;
         }
+
+        public async Task<HttpResponseMessage> Get()
+        {
+            var score = await TextAnalytics.Sentiment.Perform("This is awesome");
+            var result = Request.CreateResponse(HttpStatusCode.OK);
+            return result;
+        }
+        
     }
 }

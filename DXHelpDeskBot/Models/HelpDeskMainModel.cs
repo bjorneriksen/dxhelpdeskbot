@@ -6,10 +6,9 @@ using System.Web;
 
 namespace DXHelpDeskBot.Models
 {
-    public enum Topics
+    /*public enum Topics
     {
         Cloud,
- 
         HighScaleData,
         ClientDevelopment,
         AI
@@ -46,7 +45,7 @@ namespace DXHelpDeskBot.Models
     }
 
     [Serializable]
-    public class HelpDeskMainModel
+    public class MainTopicModel
     {
         [Template(TemplateUsage.EnumSelectOne, "What Topic are you interested in? {||}", ChoiceStyle = ChoiceStyleOptions.AutoText)]
         public Topics? topic;
@@ -55,11 +54,13 @@ namespace DXHelpDeskBot.Models
         /// Building a (FormFlow) dialog based on the HelpDeskMainModel, which is a FormFlowDialog
         /// </summary>
         /// <returns></returns>
-        public static IForm<HelpDeskMainModel> BuildForm()
+        public static IForm<MainTopicModel> BuildForm()
         {
-            return new FormBuilder<HelpDeskMainModel>()
+            return new FormBuilder<MainTopicModel>()
                 //.Message("Welcome to the HelpDeskMain Dialog!")
                 .Build();
         }
     }
+
+   */
 }

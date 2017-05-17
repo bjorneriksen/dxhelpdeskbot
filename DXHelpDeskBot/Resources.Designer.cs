@@ -59,5 +59,194 @@ namespace DXHelpDeskBot {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cognitive Services.
+        /// </summary>
+        internal static string AICognitiveServices {
+            get {
+                return ResourceManager.GetString("AICognitiveServices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deep Learning.
+        /// </summary>
+        internal static string AIDeepLearning {
+            get {
+                return ResourceManager.GetString("AIDeepLearning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Machine Learning.
+        /// </summary>
+        internal static string AIMachineLearning {
+            get {
+                return ResourceManager.GetString("AIMachineLearning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cross-Platform Development.
+        /// </summary>
+        internal static string ClientCross {
+            get {
+                return ResourceManager.GetString("ClientCross", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Game Development.
+        /// </summary>
+        internal static string ClientGame {
+            get {
+                return ResourceManager.GetString("ClientGame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Web Development.
+        /// </summary>
+        internal static string ClientWeb {
+            get {
+                return ResourceManager.GetString("ClientWeb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows Development.
+        /// </summary>
+        internal static string ClientWindows {
+            get {
+                return ResourceManager.GetString("ClientWindows", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account.
+        /// </summary>
+        internal static string CloudAccount {
+            get {
+                return ResourceManager.GetString("CloudAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IaaS.
+        /// </summary>
+        internal static string CloudIaaS {
+            get {
+                return ResourceManager.GetString("CloudIaaS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Azure Marketplace.
+        /// </summary>
+        internal static string CloudMarket {
+            get {
+                return ResourceManager.GetString("CloudMarket", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Office 365.
+        /// </summary>
+        internal static string CloudO365 {
+            get {
+                return ResourceManager.GetString("CloudO365", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PaaS.
+        /// </summary>
+        internal static string CloudPaaS {
+            get {
+                return ResourceManager.GetString("CloudPaaS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Analytics.
+        /// </summary>
+        internal static string HSDAnalytics {
+            get {
+                return ResourceManager.GetString("HSDAnalytics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Big Data.
+        /// </summary>
+        internal static string HSDBigData {
+            get {
+                return ResourceManager.GetString("HSDBigData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NoSQL.
+        /// </summary>
+        internal static string HSDNoSQL {
+            get {
+                return ResourceManager.GetString("HSDNoSQL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SQL.
+        /// </summary>
+        internal static string HSDSQL {
+            get {
+                return ResourceManager.GetString("HSDSQL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Visualize Data.
+        /// </summary>
+        internal static string HSDVisualizeData {
+            get {
+                return ResourceManager.GetString("HSDVisualizeData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AI.
+        /// </summary>
+        internal static string MainAI {
+            get {
+                return ResourceManager.GetString("MainAI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client Development.
+        /// </summary>
+        internal static string MainClient {
+            get {
+                return ResourceManager.GetString("MainClient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cloud.
+        /// </summary>
+        internal static string MainCloud {
+            get {
+                return ResourceManager.GetString("MainCloud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to High Scale Data.
+        /// </summary>
+        internal static string MainHSD {
+            get {
+                return ResourceManager.GetString("MainHSD", resourceCulture);
+            }
+        }
     }
 }
