@@ -71,10 +71,16 @@ namespace DXHelpDeskBot.Dialogs
             //context.Wait(MessageReceived); //It will start the chain over again
         }
 
-        private async Task CallbackSecond(IDialogContext context, IAwaitable<object> result)
+        private async Task CallbackSecond(IDialogContext context, IAwaitable<string> result)
         {
             var message = await result as string;
             keywords += "," + message;
+            
+            var msg = context.MakeMessage();
+            msg.Text = keywords;
+            
+            context.Forward<QuestionDialog>(new QuestionDialog(), Callback, msg, CancellationToken.None);
+        }
             /*
             var msg = await result as IMessageActivity;
 
@@ -89,7 +95,7 @@ namespace DXHelpDeskBot.Dialogs
             }
             */
             //context.Wait(MessageReceived); //It will start the chain over again
-        }
+        //}
         /*
         private async Task CallbackClient(IDialogContext context, IAwaitable<object> result)
         {
