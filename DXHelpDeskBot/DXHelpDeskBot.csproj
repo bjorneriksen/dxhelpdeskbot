@@ -111,7 +111,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dialogs\QuestionDialog.cs" />
+    <Compile Include="Models\SearchResult.cs" />
     <Compile Include="RESTOperations.cs" />
+    <Compile Include="Services\AzureSearchService.cs" />
     <Compile Include="TextAnalytics\Sentiment.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
