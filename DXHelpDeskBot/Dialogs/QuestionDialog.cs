@@ -1,4 +1,6 @@
-﻿using Microsoft.Bot.Builder.Dialogs;
+﻿using DXHelpDeskBot.Services;
+using Microsoft.Azure.Search.Models;
+using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 using System;
 using System.Collections.Generic;
@@ -28,10 +30,17 @@ namespace DXHelpDeskBot.Dialogs
 
             if (first)
             {
+                keywords = message.Text;
                 context.UserData.SetValue<bool>("FirstTime", false);
                 await context.PostAsync("What do you want to know about the subject?");
-                keywords = message.Text;
-                
+            }
+            else
+            {
+                keywords = "virtual-machines\\linux,virtual-machines\\windows";
+                var fullQuestion = message.Text;
+                AzureSearchService searchService = new AzureSearchService();
+                DocumentSearchResult<Models.SearchResult> results = await searchService.SearchAsync(keywords, fullQuestion);
+                var test = String.Empty;
             }
             context.Wait(MessageReceivedAsync);
             //await context.PostAsync(message.Text);

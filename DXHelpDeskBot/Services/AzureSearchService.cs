@@ -38,7 +38,6 @@ namespace DXHelpDeskBot.Services
                     Filter = filter,
                     Top = 30
                 };
-            string ffFilter = "baseRate lt 150";
 
             results = await indexClient.Documents.SearchAsync<Models.SearchResult>(term, parameters);
 
