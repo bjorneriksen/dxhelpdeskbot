@@ -81,8 +81,8 @@ namespace DXHelpDeskBot.Dialogs
                 message.Equals(Resources.CloudMarket) ||
                 message.Equals(Resources.CloudO365))
             {
-                //context.Call<CloudLUISDialog>(new CloudLUISDialog(), Callback);
-                context.Forward<CloudLUISDialog>(new CloudLUISDialog(), Callback, msg, CancellationToken.None);
+                context.Call<CloudLUISDialog>(new CloudLUISDialog(), Callback);
+                //context.Forward<CloudLUISDialog>(new CloudLUISDialog(), Callback, msg, CancellationToken.None);
             }
 
             //context.Wait(MessageReceived); //It will start the chain over again
