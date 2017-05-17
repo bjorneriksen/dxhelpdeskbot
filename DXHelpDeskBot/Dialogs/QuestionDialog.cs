@@ -36,13 +36,13 @@ namespace DXHelpDeskBot.Dialogs
             }
             else
             {
-                int? count = 0;
+
                 var fullQuestion = message.Text;
                 AzureSearchService searchService = new AzureSearchService();
                 try
                 {
                     DocumentSearchResult<Models.SearchResult> results = await searchService.SearchAsync(keywords, fullQuestion);
-                    count = (int)results.Count;
+                   
                 }
                 catch (Exception ex)
                 {
@@ -50,7 +50,7 @@ namespace DXHelpDeskBot.Dialogs
                 }
                 finally
                 {
-                    System.Diagnostics.Debug.WriteLine(count);
+        
                 }
             }
             /*
