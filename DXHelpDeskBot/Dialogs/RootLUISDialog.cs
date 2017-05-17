@@ -15,6 +15,7 @@ namespace DXHelpDeskBot.Dialogs
     [LuisModel("c943c6e4-099d-4284-8127-ac039a1f069b", "de9ed33a17654da6aca64cd100808d42")]
     public class RootLUISDialog : LuisDialog<RootLUISDialog>
     {
+        private static string keywords;
         [LuisIntent("")]
         public async Task None(IDialogContext context, LuisResult result)
         {
@@ -49,30 +50,32 @@ namespace DXHelpDeskBot.Dialogs
         private async Task CallbackTopics(IDialogContext context, IAwaitable<object> result)
         {
             var message = await result as string;
-
+            keywords =message;
             if (message.Equals(Resources.MainCloud))
             {
-                PromptDialog.Choice(context, CallbackCloud, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
+                PromptDialog.Choice(context, CallbackSecond, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
             }
             else if (message.Equals(Resources.MainClient))
             {
-                PromptDialog.Choice(context, CallbackClient, new List<string>() { Resources.ClientWindows, Resources.ClientCross, Resources.ClientWeb, Resources.ClientGame}, "What client topic you would like to know more about?");
+                PromptDialog.Choice(context, CallbackSecond, new List<string>() { Resources.ClientWindows, Resources.ClientCross, Resources.ClientWeb, Resources.ClientGame}, "What client topic you would like to know more about?");
             }
             if (message.Equals(Resources.MainHSD))
             {
-                PromptDialog.Choice(context, CallbackHSD, new List<string>() { Resources.HSDBigData, Resources.HSDAnalytics, Resources.HSDNoSQL, Resources.HSDSQL, Resources.HSDVisualizeData }, "What high scale data topic you would like to know more about?");
+                PromptDialog.Choice(context, CallbackSecond, new List<string>() { Resources.HSDBigData, Resources.HSDAnalytics, Resources.HSDNoSQL, Resources.HSDSQL, Resources.HSDVisualizeData }, "What high scale data topic you would like to know more about?");
             }
             if (message.Equals(Resources.MainAI))
             {
-                PromptDialog.Choice(context, CallbackAI, new List<string>() { Resources.AIMachineLearning, Resources.AICognitiveServices, Resources.AIDeepLearning}, "What AI topic you would like to know more about?");
+                PromptDialog.Choice(context, CallbackSecond, new List<string>() { Resources.AIMachineLearning, Resources.AICognitiveServices, Resources.AIDeepLearning}, "What AI topic you would like to know more about?");
             }
 
             //context.Wait(MessageReceived); //It will start the chain over again
         }
 
-        private async Task CallbackCloud(IDialogContext context, IAwaitable<object> result)
+        private async Task CallbackSecond(IDialogContext context, IAwaitable<object> result)
         {
             var message = await result as string;
+            keywords += "," + message;
+            /*
             var msg = await result as IMessageActivity;
 
             if (message.Equals(Resources.CloudAccount) ||
@@ -81,13 +84,13 @@ namespace DXHelpDeskBot.Dialogs
                 message.Equals(Resources.CloudMarket) ||
                 message.Equals(Resources.CloudO365))
             {
-                context.Call<CloudLUISDialog>(new CloudLUISDialog(), Callback);
+                //context.Call<CloudLUISDialog>(new CloudLUISDialog(), Callback);
                 //context.Forward<CloudLUISDialog>(new CloudLUISDialog(), Callback, msg, CancellationToken.None);
             }
-
+            */
             //context.Wait(MessageReceived); //It will start the chain over again
         }
-
+        /*
         private async Task CallbackClient(IDialogContext context, IAwaitable<object> result)
         {
             var message = await result as string;
@@ -157,5 +160,6 @@ namespace DXHelpDeskBot.Dialogs
 
             context.Wait(MessageReceived); //It will start the chain over again
         }
+        */
     }
 }
