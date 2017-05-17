@@ -36,11 +36,9 @@ namespace DXHelpDeskBot.Dialogs
             }
             else
             {
-                keywords = "virtual-machines\\linux,virtual-machines\\windows";
                 var fullQuestion = message.Text;
                 AzureSearchService searchService = new AzureSearchService();
                 DocumentSearchResult<Models.SearchResult> results = await searchService.SearchAsync(keywords, fullQuestion);
-                var test = String.Empty;
             }
             /*
             // Sample code for carousel
