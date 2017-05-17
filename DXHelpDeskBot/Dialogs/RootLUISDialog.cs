@@ -75,28 +75,17 @@ namespace DXHelpDeskBot.Dialogs
             var message = await result as string;
             var msg = await result as IMessageActivity;
 
-            if (message.Equals(Resources.CloudAccount))
+            if (message.Equals(Resources.CloudAccount) ||
+                message.Equals(Resources.CloudIaaS) ||
+                message.Equals(Resources.CloudPaaS) ||
+                message.Equals(Resources.CloudMarket) ||
+                message.Equals(Resources.CloudO365))
             {
-                context.Call<CloudLUISDialog>(new CloudLUISDialog(), Callback);
-            }
-            else if (message.Equals(Resources.CloudIaaS))
-            {
-                //TBD
-            }
-            if (message.Equals(Resources.CloudPaaS))
-            {
-                //TBD
-            }
-            if (message.Equals(Resources.CloudMarket))
-            {
-                //TBD
-            }
-            if (message.Equals(Resources.CloudO365))
-            {
-                //TBD
+                //context.Call<CloudLUISDialog>(new CloudLUISDialog(), Callback);
+                context.Forward<CloudLUISDialog>(new CloudLUISDialog(), Callback, msg, CancellationToken.None);
             }
 
-           // context.Wait(MessageReceived); //It will start the chain over again
+            //context.Wait(MessageReceived); //It will start the chain over again
         }
 
         private async Task CallbackClient(IDialogContext context, IAwaitable<object> result)
