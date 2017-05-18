@@ -19,7 +19,7 @@ gulp.task("printConfig", () => {
 });
 
 gulp.task("default", () => {
-    runSequence("printConfig", "initialize", ["watch", "dotnet"]);
+    runSequence("printConfig", "build", ["watch", "dotnet"]);
 });
 
 export default {
