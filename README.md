@@ -1,5 +1,7 @@
 # README
 
+This project was created during the Microsoft TED Hack Week in May of 2017.
+
 ## Pre-requisites
 
 * [NodeJS](https://nodejs.org/en/)
