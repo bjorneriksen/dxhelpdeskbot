@@ -32,3 +32,37 @@ spec:
   selector:
     app: dxhelpdeskbot
     tier: bot
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: dxhelpdeskbot
+        tier: web
+    spec:
+      containers:
+      - name: web
+        image: dxhelpdeskbot/web:latest
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+  labels:
+    app: dxhelpdeskbot
+    tier: web
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 5000
+  selector:
+    app: dxhelpdeskbot
+    tier: web
