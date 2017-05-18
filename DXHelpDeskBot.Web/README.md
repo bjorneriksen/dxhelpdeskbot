@@ -30,3 +30,22 @@ If you're looking to just compile/transpile everything you can run the build pip
 ```shell
 $ gulp build
 ```
+
+## Deploy to Docker
+
+In order to create a Docker image you need to publish the application - meaning that we need to gather all the .NET dependencies and put into a folder for deployment alongside all the compiled/transpiled content from the build process.
+
+Perform the following for publishing:
+
+```shell
+$ dotnet publish
+```
+
+It will make sure all dependencies of packages are restored and then it runs the `gulp build` task.
+The result will be put into `./bin/Debug/netcoreapp1.1/publish`.
+
+Then you create the container image:
+
+```shell
+$ docker build -t <name of image> .
+```
