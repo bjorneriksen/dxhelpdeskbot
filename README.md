@@ -2,16 +2,16 @@
 
 ## Pre-requisites
 
-* NodeJS
-* .NET Core
-* Mono (macOS, Linux)
-* .NET Framework (Windows)
+* [NodeJS](https://nodejs.org/en/)
+* [.NET Core](https://www.microsoft.com/net/download/core)
+* [Mono](http://www.mono-project.com) (macOS, Linux)
+* [.NET Framework](https://www.microsoft.com/net/download/framework) (Windows)
 
 ## Building
 
 To build the entire solution, you simply run the build script
 
-### macOS / Linux:
+### macOS / Linux
 
 ```shell
 $ ./build.sh
