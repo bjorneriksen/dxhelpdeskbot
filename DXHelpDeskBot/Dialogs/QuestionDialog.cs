@@ -36,10 +36,22 @@ namespace DXHelpDeskBot.Dialogs
             }
             else
             {
+
                 var fullQuestion = message.Text;
                 AzureSearchService searchService = new AzureSearchService();
-                DocumentSearchResult<Models.SearchResult> results = await searchService.SearchAsync(keywords, fullQuestion);
-                var test = String.Empty;
+                try
+                {
+                    DocumentSearchResult<Models.SearchResult> results = await searchService.SearchAsync(keywords, fullQuestion);
+                   
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+                finally
+                {
+        
+                }
             }
             /*
             // Sample code for carousel
