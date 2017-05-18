@@ -29,14 +29,15 @@ namespace DXHelpDeskBot.Services
 
             string[] serviceList = serviceNameList.Split(',');
             string filter = String.Join(" or ", serviceList.Select(i => $"(Service eq '{i}')"));
-
+            
             parameters =
                 new SearchParameters()
                 {
                     Select = new[] { "Title", "URL", "Description" }, //return fields
-                    OrderBy = new[] { "LastUpdated desc" },
+                    //OrderBy = new[] { "LastUpdated desc" },
                     Filter = filter,
-                    Top = 30
+                    Top = 15,
+                   
                 };
             string ffFilter = "baseRate lt 150";
 
