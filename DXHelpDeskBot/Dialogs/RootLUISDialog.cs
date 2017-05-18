@@ -30,7 +30,7 @@ namespace DXHelpDeskBot.Dialogs
 
         private async Task StartHelpDeskMainDialog(IDialogContext context, IAwaitable<object> result)
         {
-            PromptDialog.Choice(context, CallbackTopics, new List<string>() { Resources.MainCloud, Resources.MainHSD, Resources.MainClient, Resources.MainAI }, "What topic you would like to know more about?");
+            PromptDialog.Choice(context, CallbackTopics, new List<string>() { Resources.MainCloud, Resources.MainDataStorage, Resources.MainClient, Resources.MainAI }, "What topic you would like to know more about?");
         }
 
         //var enrollmentForm = new FormDialog<MainTopicModel>(new Models.MainTopicModel(), MainTopicModel.BuildForm, FormOptions.PromptInStart);
@@ -53,15 +53,15 @@ namespace DXHelpDeskBot.Dialogs
 
             if (mainTopic.Equals(Resources.MainCloud))
             {
-                PromptDialog.Choice(context, CallbackSecond, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
+                PromptDialog.Choice(context, CallbackSecond, new List<string>() { Resources.CloudAccount, Resources.CloudIaaSAndCompute, Resources.CloudNetworking, Resources.CloudIoT ,Resources.CloudPaaS, Resources.CloudMonitorManagement, Resources.CloudSecurityIdentity, Resources.CloudContainers}, "What cloud topic you would like to know more about?");
             }
             else if (mainTopic.Equals(Resources.MainClient))
             {
                 PromptDialog.Choice(context, CallbackSecond, new List<string>() { Resources.ClientWindows, Resources.ClientCross, Resources.ClientWeb, Resources.ClientGame}, "What client topic you would like to know more about?");
             }
-            if (mainTopic.Equals(Resources.MainHSD))
+            if (mainTopic.Equals(Resources.MainDataStorage))
             {
-                PromptDialog.Choice(context, CallbackSecond, new List<string>() { Resources.HSDBigData, Resources.HSDAnalytics, Resources.HSDNoSQL, Resources.HSDSQL, Resources.HSDVisualizeData }, "What high scale data topic you would like to know more about?");
+                PromptDialog.Choice(context, CallbackSecond, new List<string>() {Resources.DataAnalytics, Resources.DataDatabaseAndStorage }, "What data topic you would like to know more about?");
             }
             if (mainTopic.Equals(Resources.MainAI))
             {
@@ -91,33 +91,52 @@ namespace DXHelpDeskBot.Dialogs
                 return "";
 
             else if (msg.Equals(Resources.CloudAccount))
-                return "";
-            else if (msg.Equals(Resources.CloudIaaS))
-                return "";
-            else if (msg.Equals(Resources.CloudMarket))
-                return "";
-            else if (msg.Equals(Resources.CloudO365))
-                return "";
+                return "billing,subscription,";
+            else if (msg.Equals(Resources.CloudIaaSAndCompute))
+                return "virtual-machines\\windows,virtual-machines\\linux," +
+                    "virtual-machines-windows,virtual-machine-scale-sets," +
+                    "powershell,virtual-machines,batch,big-compute";
+            else if (msg.Equals(Resources.CloudContainers))
+                return "container-service,container-registry,service-fabric,batch,app-service";
+            else if (msg.Equals(Resources.CloudNetworking))
+                return "vpn-gateway,virtual-network,networking,load-balancer" +
+                    "network-watcher,expressroute,application-gateway,load-balancer," +
+                    "traffic-manager,cdn,dns";
+            else if (msg.Equals(Resources.CloudIoT))
+                return "iot-hub,event-hubs,time-series-insights,stream-analytics," +
+                    "iot-suite,NotificationHubs,machine-learning,notification-hubs";
+            else if (msg.Equals(Resources.CloudSecurityIdentity))
+                return "key-vault,security-center,security,active-directory,"+
+                    "active-directory-b2c,multi-factor-authentication,active-directory-ds";
+            else if (msg.Equals(Resources.CloudMonitorManagement))
+                return "Resource health,backup,site-recovery,automation,azure-resource-manager,log-analytics,monitoring-alerts," +
+                    "operations-management-suite,operational-insights,scheduler,LogAnalytics,resource-health," +
+                    "monitoring-and-diagnostics,azure-portal,application-insights,azure-resource-manger," +
+                    "azure-asm,powershell";
+            else if (msg.Equals(Resources.CloudIntegration))
+                return "biztalk-services,app-service-logic,logic-apps,service-bus-messaging," +
+                    "sql-server-stretch-database,data-factory,Data-Factory,storsimple," +
+                    "api-management,data-catalog,azure-stack";
             else if (msg.Equals(Resources.CloudPaaS))
-                return "";
-
-            else if (msg.Equals(Resources.HSDBigData))
-                return "";
-            else if (msg.Equals(Resources.HSDAnalytics))
-                return "";
-            else if (msg.Equals(Resources.HSDNoSQL))
-                return "";
-            else if (msg.Equals(Resources.HSDSQL))
-                return "";
-            else if (msg.Equals(Resources.HSDVisualizeData))
-                return "";
+                return "app-service,app-service-web," +
+                    "cloud-services,app-service\\mobile,functions,app-service-mobile," +
+                    "app-service-logic,backup,service-bus,app-service-api,app-service\\api,logic-apps" +
+                    "media-services,search,notification-hubs,media,mobile-engagement,service-fabric";
+            else if (msg.Equals(Resources.DataAnalytics))
+                return "data-factory,Data-Factory,analysis-services,data-lake-analytics," +
+                    "data-lake-store,datalake-store,data-catalog,power-bi-embedded,time-series-insights," +
+                    "stream-analytics,machine-learning,hdinsight,HDInsight,customer-insights";
+            else if (msg.Equals(Resources.DataDatabaseAndStorage))
+                return "postgresql-database,postgresql - database,mysql-database,mysql," +
+                    "sql-server-stretch-database,postgresql,sql-database," +
+                    "postgres,sql-data-warehouse,cosmos-db,cosmosdb,redis-cache,storage,cache";
 
             else if (msg.Equals(Resources.AIMachineLearning))
-                return "";
+                return "machine-learning,customer-insights";
             else if (msg.Equals(Resources.AICognitiveServices))
-                return "";
+                return "cognitive-services";
             else if (msg.Equals(Resources.AIDeepLearning))
-                return "";
+                return "machine-learning";
             else
                 return "";
         }

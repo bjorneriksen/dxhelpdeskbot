@@ -141,32 +141,35 @@
   <data name="CloudAccount" xml:space="preserve">
     <value>Account</value>
   </data>
-  <data name="CloudIaaS" xml:space="preserve">
-    <value>IaaS</value>
+  <data name="CloudContainers" xml:space="preserve">
+    <value>Containers, Microservices, Orchestration</value>
   </data>
-  <data name="CloudMarket" xml:space="preserve">
-    <value>Azure Marketplace</value>
+  <data name="CloudIaaSAndCompute" xml:space="preserve">
+    <value>IaaS and Compute</value>
   </data>
-  <data name="CloudO365" xml:space="preserve">
-    <value>Office 365</value>
+  <data name="CloudIntegration" xml:space="preserve">
+    <value>Enterprise Integration</value>
+  </data>
+  <data name="CloudIoT" xml:space="preserve">
+    <value>Internet Of Things</value>
+  </data>
+  <data name="CloudMonitorManagement" xml:space="preserve">
+    <value>Monitoring + Management</value>
+  </data>
+  <data name="CloudNetworking" xml:space="preserve">
+    <value>Networking</value>
   </data>
   <data name="CloudPaaS" xml:space="preserve">
-    <value>PaaS</value>
+    <value>PaaS (Web, Mobile, ...)</value>
   </data>
-  <data name="HSDAnalytics" xml:space="preserve">
-    <value>Analytics</value>
+  <data name="CloudSecurityIdentity" xml:space="preserve">
+    <value>Security + Identity</value>
   </data>
-  <data name="HSDBigData" xml:space="preserve">
-    <value>Big Data</value>
+  <data name="DataAnalytics" xml:space="preserve">
+    <value>Data + Analytics</value>
   </data>
-  <data name="HSDNoSQL" xml:space="preserve">
-    <value>NoSQL</value>
-  </data>
-  <data name="HSDSQL" xml:space="preserve">
-    <value>SQL</value>
-  </data>
-  <data name="HSDVisualizeData" xml:space="preserve">
-    <value>Visualize Data</value>
+  <data name="DataDatabaseAndStorage" xml:space="preserve">
+    <value>Database (SQL, NoSql, Cache) + Storage</value>
   </data>
   <data name="MainAI" xml:space="preserve">
     <value>AI</value>
@@ -177,7 +180,7 @@
   <data name="MainCloud" xml:space="preserve">
     <value>Cloud</value>
   </data>
-  <data name="MainHSD" xml:space="preserve">
-    <value>High Scale Data</value>
+  <data name="MainDataStorage" xml:space="preserve">
+    <value>Data and Storage in the Cloud</value>
   </data>
 </root>

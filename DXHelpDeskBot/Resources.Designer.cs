@@ -133,34 +133,61 @@ namespace DXHelpDeskBot {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IaaS.
+        ///   Looks up a localized string similar to Containers, Microservices, Orchestration.
         /// </summary>
-        internal static string CloudIaaS {
+        internal static string CloudContainers {
             get {
-                return ResourceManager.GetString("CloudIaaS", resourceCulture);
+                return ResourceManager.GetString("CloudContainers", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Azure Marketplace.
+        ///   Looks up a localized string similar to IaaS and Compute.
         /// </summary>
-        internal static string CloudMarket {
+        internal static string CloudIaaSAndCompute {
             get {
-                return ResourceManager.GetString("CloudMarket", resourceCulture);
+                return ResourceManager.GetString("CloudIaaSAndCompute", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Office 365.
+        ///   Looks up a localized string similar to Enterprise Integration.
         /// </summary>
-        internal static string CloudO365 {
+        internal static string CloudIntegration {
             get {
-                return ResourceManager.GetString("CloudO365", resourceCulture);
+                return ResourceManager.GetString("CloudIntegration", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PaaS.
+        ///   Looks up a localized string similar to Internet Of Things.
+        /// </summary>
+        internal static string CloudIoT {
+            get {
+                return ResourceManager.GetString("CloudIoT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monitoring + Management.
+        /// </summary>
+        internal static string CloudMonitorManagement {
+            get {
+                return ResourceManager.GetString("CloudMonitorManagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Networking.
+        /// </summary>
+        internal static string CloudNetworking {
+            get {
+                return ResourceManager.GetString("CloudNetworking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PaaS (Web, Mobile, ...).
         /// </summary>
         internal static string CloudPaaS {
             get {
@@ -169,47 +196,29 @@ namespace DXHelpDeskBot {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Analytics.
+        ///   Looks up a localized string similar to Security + Identity.
         /// </summary>
-        internal static string HSDAnalytics {
+        internal static string CloudSecurityIdentity {
             get {
-                return ResourceManager.GetString("HSDAnalytics", resourceCulture);
+                return ResourceManager.GetString("CloudSecurityIdentity", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Big Data.
+        ///   Looks up a localized string similar to Data + Analytics.
         /// </summary>
-        internal static string HSDBigData {
+        internal static string DataAnalytics {
             get {
-                return ResourceManager.GetString("HSDBigData", resourceCulture);
+                return ResourceManager.GetString("DataAnalytics", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NoSQL.
+        ///   Looks up a localized string similar to Database (SQL, NoSql, Cache) + Storage.
         /// </summary>
-        internal static string HSDNoSQL {
+        internal static string DataDatabaseAndStorage {
             get {
-                return ResourceManager.GetString("HSDNoSQL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to SQL.
-        /// </summary>
-        internal static string HSDSQL {
-            get {
-                return ResourceManager.GetString("HSDSQL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Visualize Data.
-        /// </summary>
-        internal static string HSDVisualizeData {
-            get {
-                return ResourceManager.GetString("HSDVisualizeData", resourceCulture);
+                return ResourceManager.GetString("DataDatabaseAndStorage", resourceCulture);
             }
         }
         
@@ -241,11 +250,11 @@ namespace DXHelpDeskBot {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to High Scale Data.
+        ///   Looks up a localized string similar to Data and Storage in the Cloud.
         /// </summary>
-        internal static string MainHSD {
+        internal static string MainDataStorage {
             get {
-                return ResourceManager.GetString("MainHSD", resourceCulture);
+                return ResourceManager.GetString("MainDataStorage", resourceCulture);
             }
         }
     }
