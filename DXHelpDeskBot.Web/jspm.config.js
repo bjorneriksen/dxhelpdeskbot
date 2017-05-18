@@ -57,6 +57,9 @@ SystemJS.config({
                     ]
                 }
             }
+        },
+        "/": {
+            "defaultExtension": "js"
         }
     }
 });
@@ -73,10 +76,6 @@ SystemJS.config({
         "knockout": "github:knockout/knockout@3.4.0"
     },
     packages: {
-        "/": {
-            defaultExtension: "js"
-        },
-        
         "github:Hypercubed/systemjs-plugin-html@0.0.8": {
             "map": {
                 "webcomponentsjs": "github:webcomponents/webcomponentsjs@0.7.22"
