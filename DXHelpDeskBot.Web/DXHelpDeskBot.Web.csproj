@@ -6,7 +6,7 @@
     <AssemblyName>DXHelpDeskBot.Web</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>Web</PackageId>
-    <RuntimeFrameworkVersion>1.0.4</RuntimeFrameworkVersion>
+    <RuntimeFrameworkVersion>1.1.1</RuntimeFrameworkVersion>
     <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;dnxcore50;netstandard1.6;portable-net45+win8</PackageTargetFallback>
   </PropertyGroup>
 
@@ -33,7 +33,7 @@
     <Exec Command="npm install" />
     <Exec Command="jspm install" />
     <Exec Command="bower install" />
-    <Exec Command="gulp initialize" />
+    <Exec Command="gulp build" />
   </Target>
 
   <ItemGroup>
