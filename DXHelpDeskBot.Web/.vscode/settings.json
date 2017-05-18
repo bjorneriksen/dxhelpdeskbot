@@ -1,0 +1,18 @@
+{
+    "files.exclude": {
+        "bin": true,
+        "bower_components": true,
+        "node_modules": true,
+        "jspm_packages": true,
+        "obj": true,
+        "**/*/bin/": true,
+        "**/*/obj/": true,
+        "**/*/bin/*": true,
+        "**/*/obj/*": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+    }
+}
