@@ -39,10 +39,28 @@ namespace DXHelpDeskBot.Dialogs
 
                 var fullQuestion = message.Text;
                 AzureSearchService searchService = new AzureSearchService();
+
                 try
                 {
                     DocumentSearchResult<Models.SearchResult> results = await searchService.SearchAsync(keywords, fullQuestion);
-                   
+
+                    List<Attachment> attachements = new List<Attachment>();
+
+                    foreach (var res in results.Results)
+                    {
+                        var hero = GetHeroCard(
+                            res.Document.Title,
+                            "",
+                            res.Document.Description,
+                            new CardAction(ActionTypes.OpenUrl, "Learn more", value: res.Document.URL));
+                        attachements.Add(hero);
+                    }
+                    if (attachements.Count > 0)
+                    {
+                        await ShowHeroCard(context, attachements);
+                    }
+                    context.Wait(MessageReceivedAsync);
+
                 }
                 catch (Exception ex)
                 {
@@ -70,14 +88,13 @@ namespace DXHelpDeskBot.Dialogs
             */
         }
 
-        private static Attachment GetHeroCard(string title, string subtitle, string text, CardImage cardImage, CardAction cardAction)
+        private static Attachment GetHeroCard(string title, string subtitle, string text, CardAction cardAction)
         {
             var heroCard = new HeroCard
             {
                 Title = title,
                 Subtitle = subtitle,
                 Text = text,
-                Images = new List<CardImage>() { cardImage },
                 Buttons = new List<CardAction>() { cardAction },
             };
 
