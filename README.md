@@ -49,4 +49,6 @@ For deploying the images as Pods and setting up the services for them, you simpl
 $ kubectl create -f k8_bot.yaml
 ```
 
+> Due to a requirement on the Bot framework of TLS/SSL. At the moment, the configuration will not provide an endpoint that is accessible for registering in the Bot dashboard. You can however run it through the Bot Framework emulator without HTTPS.
+
 ### Azure Functions
