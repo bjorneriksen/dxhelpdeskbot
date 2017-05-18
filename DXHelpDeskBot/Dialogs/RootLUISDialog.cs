@@ -50,7 +50,7 @@ namespace DXHelpDeskBot.Dialogs
         private async Task CallbackTopics(IDialogContext context, IAwaitable<object> result)
         {
             var mainTopic = await result as string;
-            //keywords =message;
+
             if (mainTopic.Equals(Resources.MainCloud))
             {
                 PromptDialog.Choice(context, CallbackSecond, new List<string>() { Resources.CloudAccount, Resources.CloudIaaS, Resources.CloudPaaS, Resources.CloudO365, Resources.CloudMarket }, "What cloud topic you would like to know more about?");
@@ -67,16 +67,14 @@ namespace DXHelpDeskBot.Dialogs
             {
                 PromptDialog.Choice(context, CallbackSecond, new List<string>() { Resources.AIMachineLearning, Resources.AICognitiveServices, Resources.AIDeepLearning}, "What AI topic you would like to know more about?");
             }
-
-            //context.Wait(MessageReceived); //It will start the chain over again
         }
 
         private async Task CallbackSecond(IDialogContext context, IAwaitable<string> result)
         {
-            var subCategory = await result as string;
+            var subTopic = await result as string;
             
             var keywordsMessage = context.MakeMessage();
-            keywordsMessage.Text = GetKeyword(subCategory);
+            keywordsMessage.Text = GetKeyword(subTopic);
 
             await context.Forward<QuestionDialog>(new QuestionDialog(), Callback, keywordsMessage, CancellationToken.None);
         }
