@@ -5,6 +5,7 @@
     <title>The ultimate</title>
 
     <link rel="stylesheet" href="Content/styles.css">
+    <link href="https://unpkg.com/botframework-webchat/botchat.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -12,13 +13,14 @@
     <div class="container">
         <div data-view="Structure/header"></div>
         <div data-view="Chat/index"></div>
+        
     </div>
 
     <script src="jspm_packages/system.js"></script>
     <script src="jspm.config.js"></script>
 
     <script>
-        System.cacheBust = "?bust="+Date.now();
+        System.cacheBust = "?bust=" + Date.now();
         var systemLocate = System.locate;
 
         System.locate = function (load) {
@@ -34,12 +36,17 @@
             System.import("knockout"),
             System.import("index.js"),
             System.import("./Infrastructure/Views.js")
-        ]).then(function(modules) {
+        ]).then(function (modules) {
             var index = new modules[1].index();
             modules[0].applyBindings(index);
             modules[2].default.handleElement(document.body);
         });
     </script>
+
+    <script src="https://unpkg.com/botframework-webchat/botchat.js"></script>
+    <script src="/Scripts/jquery-2.2.4.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    
 </body>
 
 </html>

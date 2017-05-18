@@ -67,6 +67,7 @@ class paths {
     get content() {
         return [
             `${this.rootDir}/jspm_packages/**/*`,
+            `${this.rootDir}/bower_components/bootstrap/dist/js/bootstrap.min.js`,
             `${this.sourceDir}/jspm.config.js`,
             `${this.rootDir}/**/*.jpg`,
             `${this.rootDir}/**/*.jpeg`,

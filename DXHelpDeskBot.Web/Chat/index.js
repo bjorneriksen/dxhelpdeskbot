@@ -1,26 +1,20 @@
 import * as ko from "knockout";
-import "signalr/js";
+import * as modal from "./modalBindingHandler";
+//import "signalr/js";
 
 export class index {
     constructor() {
-        let self = this;
-        /*
-        this.items = ko.observableArray();
-        this.itemsCount = ko.computed(() => self.items().length);
-
-
-        $.connection.cartHub.client.itemAdded = (item) => this.itemAdded(item);
-
-        $.connection.hub.start().done(() => {
-            console.log("SignalR started");
-            $.connection.cartHub.server.something("awesome").then((result) => {
-                debugger;
-            })
-        });*/
     }
 
-    /*
-    itemAdded(item) {
-        this.items.push(item);
-    }*/
+    shown() {
+        BotChat.App({
+            directLine: {
+                token: "WfnLyhBjpIE.dAA.TABCADYASwBFAHQAeQBBAEMARwB5AEEARQAzAHQAWQBxAFkAZwBPAGsANgA.3Zb6Nu3P0gE.DkF6YRTkbpc.gOaZ9elxuLma36i8-3Trni8N4wWhV1dQqUuQUrYMNSw"
+            },
+            user: { id: 'botchattest' },
+            bot: { id: 'yourbot' },
+            resize: 'detect'
+        }, document.getElementById("bot"));
+
+    }
 }
