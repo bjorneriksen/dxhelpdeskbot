@@ -134,7 +134,7 @@ namespace DXHelpDeskBot.Dialogs
             else if (msg.Equals(Resources.AIMachineLearning))
                 return "machine-learning,customer-insights";
             else if (msg.Equals(Resources.AICognitiveServices))
-                return "cognitive-services";
+                return "cognitive-services,video-indexer";
             else if (msg.Equals(Resources.AIDeepLearning))
                 return "machine-learning";
             else
