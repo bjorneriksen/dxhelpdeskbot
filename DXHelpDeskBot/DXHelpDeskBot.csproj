@@ -164,6 +164,7 @@
     </Compile>
     <Compile Include="MessageHandler.cs" />
     <Compile Include="MessageLoggingHandler.cs" />
+    <Compile Include="LogRequestModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

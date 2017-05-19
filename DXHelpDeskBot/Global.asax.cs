@@ -1,4 +1,6 @@
 ﻿using System.Web.Http;
+using Autofac;
+using Microsoft.Bot.Builder.Dialogs;
 
 namespace DXHelpDeskBot
 {
@@ -8,6 +10,10 @@ namespace DXHelpDeskBot
         {
 			GlobalConfiguration.Configuration.MessageHandlers.Add(new MessageLoggingHandler());
 			GlobalConfiguration.Configure(WebApiConfig.Register);
+
+            var cb = new ContainerBuilder();
+            cb.RegisterModule<LogRequestModule>();
+            cb.Update(Conversation.Container);
         }
     }
 }
